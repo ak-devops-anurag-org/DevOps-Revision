@@ -1,0 +1,14 @@
+kubectl expose <resource-type> <resource-name> \
+  --name=<svc-name> \
+  --port=<service-port> \
+  --target-port=<container-port> \
+  --type=<service-type> \
+  [--name=<service-name>] \
+  [--protocol=<protocol>]
+
+Example - 
+kubectl expose deployment nginx-deployment \
+  --port=80 \
+  --target-port=80
+
+

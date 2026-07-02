@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: LimitRange
+metadata:
+  name: cpu-limit-range
+  namespace: your-namespace-name  # Replace with your namespace
+spec:
+  limits:
+  - type: Container
+    default:
+      cpu: "500m"
+    defaultRequest:
+      cpu: "250m"
+    min:
+      cpu: "100m"
+    max:
+      cpu: "1000m"

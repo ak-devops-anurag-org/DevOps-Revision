@@ -1,0 +1,56 @@
+What is Git, why do we use it, what problem does it solve?  
+VC types - Centralized (SVN - subdivision and CVS) and distributed (git and bazaar ) (and tools for each)
+git fetch v/s git pull
+
+Explain the difference between Git and GitHub
+
+Explain - working directory, staging area, local repo, remote repo
+Git (Untracked → Tracked → Modified → Staged → Committed → Pushed).  
+What are commits, branches, tags?  
+Brancing basics - Creating Branch
+Renaming Branch
+Deleting Branch
+Checkout Branch
+Different branching strategies (Git Flow, GitHub Flow, GitLab Flow).  when to use each, currently which is most used one
+
+Explain HEAD, detached HEAD, and SHA.  
+What are merge, rebase, fast-forward non fast forward merge, squash merge?
+cherry pick?? with example command  
+
+Explain conflicts and how to resolve them.  
+
+Difference between clone, fork, and pull.  
+Difference between pull vs fetch vs merge.  
+Difference between reset (soft, mixed, hard), revert, and checkout. use case??
+How to move to a specific commit?? and start updating the code from there..  
+Explain Git stash and Git cherry-pick.  
+Explain Git rebase interactive (git rebase -i).  
+What is Git reflog?  
+What is GitHub? Why use GitHub over local Git?  
+Explain GitHub features: Issues, PR (pull request), Actions, Fork, Stars.  
+Explain GitHub Actions CI/CD basics.  
+Explain SSH vs HTTPS authentication in GitHub.  
+Explain GitHub personal access tokens.  
+Explain GitHub organizations, repositories, teams.  
+What is .gitignore?  
+
+Use cases of Git in real-world DevOps projects.  
+Best practices for Git commit messages and branching.  
+Write all important Git commands with syntax and example.  
+
+
+
+
+
+
+
+
+At the end, provide **all Git & GitHub commands grouped by categories** (setup, staging, commits, branching, merging, stashing, collaboration, inspection, advanced).  
+
+- Act as an experienced **DevOps engineer with 15 years of expertise in Git & GitHub**.  
+- Create a **revision doc in Markdown format** (not detailed theory, but **2–3 line notes** with **technical terms/keywords**).  
+- Include **command syntax + example** for each concept.  
+- Follow a **standard flow**: Basics → Architecture → Lifecycle → Core concepts → Branching/Merging → Collaboration (GitHub) → Advanced topics → Best practices → Commands reference.  
+- Use **tabular format** for differences (e.g., Git vs GitHub, clone vs fork, merge vs rebase).  
+- If the content is large, create it in **parts/sections** so we can continue later.
+If it is not possible to create the entire doc in a single go take your time create a particular part of it then we can move to the next part and continue with documentation creation in Markdown format itself, following the same structure as above, just do not mark heading with numbers and do not use --- for line 

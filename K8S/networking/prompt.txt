@@ -1,0 +1,76 @@
+CNI and CNI plugins (Calico, Flannel, etc..)
+How to check the current plugin
+Plugins that does not support NetworkPolicies. 
+How Networkpolicies are related with CNI?
+Different Plugins can be installed/unistalled based on the need 
+
+Pod to pod communication 
+  - withn the same node v/s different nodes
+  - how does the traffic flow form pod in node a to pod in node basics
+
+Kube-proxy v/s CNI
+
+Who gets the IP container or pod and who assignes the IP
+
+path - 
+  /opt/cni/bin ?
+  /etc/cni/net.d ?
+
+Each CNI plugin is deployed as Demonset?
+Pod subnet?
+Default CNI? while creating the cluster
+
+
+
+
+
+
+Topics to cover - 
+- pod networking
+- CNI and its plugins
+- How NetworkPolicies are related to CNI plugins
+
+- path and config related to CNI
+- CNI weave
+- IPAM (ip address managment) weave
+- Service Networking
+
+- services created are accessible within the entire cluster for pop to pod comm (NodePort and Cluster - get sepecifc IP)
+- how these service get IP?
+- WHEN WE HAVE SERVICES, USING THESE WE CAN COMM ACCROSS NODEW WITHING CLUSTER WHY WE NEED CNI
+- kube proxy creates the iptable rules
+- cat /var/log/kube-proxy.log
+
+What is the range of IP addresses configured for PODs on this cluster? 
+cat /etc/kubernetes/manifests/kube-controller-manager.yaml   | grep cluster-cidr
+range of CIDR assigned to cluster node 
+ip addr show eth0
+What type of proxy is the kube-proxy configured to use?
+kubectl logs -n kube-system kube-proxy-cc776
+
+
+- DNS in k8s
+- FQDN of the service - HostName (service, pod name), ns, type, root, ipaddress
+  web-service.app.svc.cluster.local
+  FQDN for svc, pod,  
+
+- CoreDNS
+
+
+coreDNS - 
+- why there is pods, svc and cm for coreDNS
+
+
+
+
+
+
+
+At the end, provide **all networking k8s commands grouped by categories**  
+
+- Act as an experienced **DevOps engineer with 15 years of expertise in k8s**.  
+- Create a **revision doc in Markdown format** (not detailed theory, but **2–3 line notes** with **technical terms/keywords**).  
+- Include **command syntax + example** for each concept.  
+- Follow a **standard flow**: Basics → Intermediate topics (with main heading) → Advanced topics → Best practices → Commands reference.  
+- If the content is large, create it in **parts/sections** so we can continue later.
+If it is not possible to create the entire doc in a single go take your time create a particular part of it then we can move to the next part and continue with documentation creation in Markdown format itself, following the same structure as above, just do not mark heading with numbers and do not use --- for line 

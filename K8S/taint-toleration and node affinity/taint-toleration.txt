@@ -1,0 +1,27 @@
+>> Get Taint on a node - describe a node
+kubectl describe node <node-name> | grep -i taint
+
+>> APPLY a taint on node
+kubectl taint node <node-name> <key>=<value>:<taint-effect>
+
+>> Remove the taint on controlplane, which currently has the taint effect of NoSchedule.
+Syntax  - kubectl taint nodes controlplane <taint-name>-
+Example - kubectl taint nodes controlplane node-role.kubernetes.io/control-plane:NoSchedule-
+
+
+============ EFFECT - Meaning  ============
+
+NoSchedule - Don't schedule Pods unless they tolerate this taint 
+PreferNoSchedule - Try to avoid scheduling here, but not strict (Avoid node if possible) 
+NoExecute - Evicts existing Pods + blocks new ones unless tolerated 
+
+
+NOTE: The EFFECT applied on taint should be same on toleration
+
+kubectl taint node worker-node gpu=true:NoSchedule
+
+tolerations:
+  - key: "gpu"
+    operator: "Equal"    # or "Exists"
+    value: "true"
+    effect: "NoSchedule"

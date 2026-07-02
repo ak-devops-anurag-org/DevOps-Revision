@@ -1,0 +1,10 @@
+Limit-range yaml files - 
+
+These YAML files are used to set default resource requests and limits (CPU and memory) for newly created pods.
+The configuration is applied at the namespace level.
+
+Once applied or updated, the settings will:
+    - Apply only to newly created pods in the specified namespace.
+    - Not affect existing pods that were created before the configuration was applied or modified.
+
+Resoure Quota yaml file

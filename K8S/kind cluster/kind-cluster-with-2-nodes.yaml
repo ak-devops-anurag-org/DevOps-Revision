@@ -1,0 +1,14 @@
+# kind-cluster-with-2-nodes.yaml
+# kind cluster with one control plane and worker node
+
+# Cmd - kind create cluster --name ak-kind-cluster --config <yaml-cluster-file>
+# Eg -  kind create cluster --name ak-kind-cluster --config kind-cluster-with-2-nodes.yaml
+
+# to verify - kubectl get nodes
+
+
+kind: Cluster
+apiVersion: kind.x-k8s.io/v1alpha4
+nodes:
+- role: control-plane
+- role: worker

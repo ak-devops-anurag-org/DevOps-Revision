@@ -1,0 +1,18 @@
+kind: ReplicaSet
+metadata:
+  name: nginx-rs
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      run: nginx-pod
+      env: dev
+  template:
+    metadata:
+      labels:
+        run: nginx-pod
+        env: dev
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest

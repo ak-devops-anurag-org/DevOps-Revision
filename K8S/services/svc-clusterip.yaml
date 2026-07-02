@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-clusterip-service     # Name of the Service
+  labels:
+    app: svc-clusterip              # Labels help group and select Kubernetes resources
+    env: dev                        # Environment label for dev environment
+spec:
+  type: ClusterIP                   # Optional - default svc is ClusterIP (internal comm b/n Pods )
+  ports:
+    - name: http                    # Optional: name of the port (useful for readability)
+      port: 80                      # Service port (used inside the cluster)
+      targetPort: 80                # Port on the pod/container that receives the traffic
+      # protocol: TCP               # Optional: defaults to TCP
+  selector:
+    run: nginx-pod                  # This service will route traffic to pods with these labels
+    env: dev                        # Ensures it only targets the correct pods in the dev environment
+
+
+
+
+

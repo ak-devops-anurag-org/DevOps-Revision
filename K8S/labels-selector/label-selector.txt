@@ -1,0 +1,18 @@
+
+>> Command to get pods with labels 
+kubectl get pods --selector <key>=<value>
+
+>> Command to get all k8s objects/compo with labels 
+kubectl get all --selector env=prod
+
+>> combining multi labels with commas (,) 
+kubectl get all --selector env=prod,bu=finance,tier=frontend
+
+>> List all labels of a Node/Pod
+kubectl get node/pod <node/pod-name> --show-labels
+
+>> Add a label to a Node/Pod
+kubectl label node/pod <node/pod-name> <key>=<value>
+
+>> Remove/delete a label
+kubectl label node/pod <node/pod-name> <key>-

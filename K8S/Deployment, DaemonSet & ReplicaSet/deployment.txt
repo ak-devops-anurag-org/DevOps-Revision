@@ -1,0 +1,16 @@
+
+>> create a New Deployment 
+kubectl create deployment <deploy-name> --image=<img-name> --replicas=3 --port 80
+kubectl create deployment blue --image=nginx --replicas=3
+
+
+
+
+kubectl create deployment <deploy-name> \
+  --image=<image-name> \
+  --dry-run=client -o yaml > <deploy-file-name>.yaml
+
+kubectl create deployment nginx-deploy \
+  --image=nginx \
+  --dry-run=client -o yaml > nginx-deployment.yaml
+

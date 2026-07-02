@@ -1,0 +1,12 @@
+username - ak_here
+password - Hello@123456
+
+
+
+
+jenkins plugins - 
+  - blue ocean
+  - Pipeline: Stage View Plugin
+  - Role-based Authorization Strategy
+  - Docker
+  - Sonar qube

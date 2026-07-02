@@ -1,0 +1,8 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: example-namespace
+  labels:
+    name: example-namespace
+    purpose: demonstration
+    environment: development

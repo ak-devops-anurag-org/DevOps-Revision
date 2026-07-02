@@ -1,0 +1,27 @@
+>> Generate YAML for a Pod without creating it
+k run <pod-name> --image=<image-name> --dry-run=client -o yaml > <file-name>.yaml
+k run my-new-pod --image=nginx:latest --dry-run=client -o yaml > create-a-pod.yaml
+
+
+>> list pods present in all ns
+k get pods --all-namespaces
+
+>> Get LOGS of a Pod
+kubeclt logs <pod-name> 
+
+>> Get LOGS of a container in a Pod
+kubeclt logs <pod-name> -c <container-name>
+
+
+>> get into the pod/container 
+kubectl exec –it <pod-name> -n=<ns-name> --sh	
+
+>> list all the pods in default ns 
+kubectl get pods || k get pods
+
+>> create a new pod in a ns (imerative command)
+kubectl create run <pod-name> --image=<img-name> -n <ns-name>			     
+
+>> EDIT Command (to open the pod in yaml file)
+kubectl edit pod <pod-name>
+

@@ -1,0 +1,13 @@
+# kubectl apply -f create-new-nginx-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod 
+  labels:
+    run: nginx-pod
+    env: dev
+spec:
+  containers:
+  - name: nginx
+    image: nginx:latest

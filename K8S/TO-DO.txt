@@ -1,0 +1,8 @@
+
+create a kind cluster with
+    - single Control plane
+    - a Control Plane and a Worker node
+
+RS and RC
+Deployment - rollback and rolling update
+

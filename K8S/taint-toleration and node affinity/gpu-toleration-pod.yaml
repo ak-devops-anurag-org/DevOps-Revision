@@ -1,0 +1,18 @@
+# k run my-new-pod --image=nginx:latest -o yaml --dry-run=client > pod.yaml                           
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: gpu-toleration-pod
+  name: gpu-toleration-pod
+spec:
+  containers:
+  - image: nginx:latest
+    name: gpu-toleration-pod
+  tolerations:
+    - key: "gpu"
+      operator: "Equal"    # or "Exists"
+      value: "true"
+      effect: "NoSchedule" # can also be "NoExecute" or "PreferNoSchedule"

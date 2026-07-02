@@ -1,0 +1,17 @@
+# kubectl run my-pod --image:nginx -o yaml > file-name.yml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  creationTimestamp: null
+  labels:
+    run: my-new-pod
+  name: my-new-pod
+spec:
+  containers:
+  - image: nginx:latest
+    name: my-new-pod
+    resources: {}
+  dnsPolicy: ClusterFirst
+  restartPolicy: Always
+status: {}

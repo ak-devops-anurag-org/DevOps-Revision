@@ -1,0 +1,13 @@
+# vi manually-scheduling-pod.yaml
+# kubectl delete -f manually-scheduling-pod.yaml    # update the nodeName
+# kubectl create -f manually-scheduling-pod.yaml
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx
+spec:
+  nodeName: controlplane    # name if the node where we want to schedule the pod
+  containers:
+  -  image: nginx
+     name: nginx

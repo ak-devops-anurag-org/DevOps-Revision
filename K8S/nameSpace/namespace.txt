@@ -1,0 +1,27 @@
+
+They load-balance across Pods?? Correct? Yes, NodePort and ClusterIP do load balancing  
+
+<service-name>.<namespace>.svc.cluster.local 
+
+kubectl exec -n <ns> <pod> -- curl http://<pod-ip>          # direct IP (not stable) 
+kubectl exec -n <ns> <pod> -- curl http://<svc-name>.<ns>   # stable 
+
+
+kubectl get namespace || k get ns 
+
+k get all --namespace=<namspace-name> || k get all –n <namspace-name>  
+k get all                           # get pods from all namespace (default one) 
+k get pods			                # get pods in default namespace (default one) 
+k get pods --all-namespace 
+k delete ns <ns-name> 
+k create ns <ns-name> 
+k create deploy nginx-demo --image=nginx –n demo 
+
+
+*
+kubectl config set-context $(kubelet config current-context) --namespace=dev 
+ 
+k config view --minify --output 'jsonpath={..namespace}'    # check current ns 
+k config set-context --current --namespace=dev              # switch to dev ns 
+
+ 

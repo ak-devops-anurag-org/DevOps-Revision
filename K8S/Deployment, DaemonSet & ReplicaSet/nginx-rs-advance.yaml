@@ -1,0 +1,39 @@
+# IMPORTANT: Replica set - SET BASED SELECTOR (not equality based - rc)
+# will only select the pod which satisfies all the matchExpression 
+# matchExpressions — ALL conditions must be satisfied
+
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: nginx-rs-advanced
+spec:
+  replicas: 3
+  selector:
+    matchExpressions:
+      # Match Pods with label `app=nginx`
+      - key: app
+        operator: In
+        values:
+          - nginx
+
+      # Exclude Pods with label `env=prod`
+      - key: env
+        operator: NotIn
+        values:
+          - prod
+
+      # Only match Pods that have the `tier` label (any value)
+      - key: tier
+        operator: Exists
+
+  # This template defines the Pod to be created
+  template:
+    metadata:
+      labels:
+        app: nginx       # Matches selector
+        env: staging     # Not 'prod', so valid
+        tier: frontend   # Required by `Exists`
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:latest

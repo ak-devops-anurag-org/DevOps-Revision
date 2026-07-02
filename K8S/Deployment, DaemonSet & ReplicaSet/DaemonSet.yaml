@@ -1,0 +1,16 @@
+apiVersion: apps/v1
+kind: DaemonSet
+metadata:
+  name: node-logger
+spec:
+  selector:
+    matchLabels:
+      name: node-logger
+  template:
+    metadata:
+      labels:
+        name: node-logger
+    spec:
+      containers:
+      - name: logger
+        image: my-logger:latest

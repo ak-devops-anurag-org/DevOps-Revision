@@ -1,0 +1,13 @@
+Modules
+Import
+Terraform Functions
+Terrafrom Expression
+
+
+Import 
+✅ Terraform updates the state file (terraform.tfstate) - after plan/apply
+terraform import is not a reverse-engineering tool — it's a state bootstrapping tool.
+
+
+Import v/s Data block
+Implecit and explicit dependcies 
