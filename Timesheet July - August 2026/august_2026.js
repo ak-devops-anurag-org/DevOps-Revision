@@ -219,8 +219,8 @@ const timesheetData_week2 = {
 
   "13-08-2026": [
     {
-      task: "Client Meeting",
-      taskValue: "286",
+      task: "Internal Discussion",
+      taskValue: "287",
       description: "Started the Agent Garage KT session with Palash and reviewed the project's CI/CD architecture and deployment workflow.",
       hours: 3,
       minutes: 0
@@ -243,8 +243,8 @@ const timesheetData_week2 = {
 
   "14-08-2026": [
     {
-      task: "Client Meeting",
-      taskValue: "286",
+      task: "Internal Discussion",
+      taskValue: "287",
       description: "Continued the Agent Garage KT session with Palash and explored the CI/CD architecture and deployment flow.",
       hours: 3,
       minutes: 0
@@ -267,7 +267,7 @@ const timesheetData_week2 = {
 };
 
 // 17-21 Aug 2026
-const timesheetData = {
+const timesheetData_week3 = {
   "17-08-2026": [
     {
       task: "Other",
@@ -424,6 +424,131 @@ const timesheetData = {
   ]
 };
 
+const timesheetData = {
+  "24-08-2026": [
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Prepared for the Agent Garage technical interview by reviewing the application architecture, infrastructure components and overall deployment setup.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Started a POC to evaluate disabling public access to Azure Web PubSub.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Analyzed the existing Application Gateway and Azure Web PubSub connectivity and traffic flow.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Identified the infrastructure and application-level requirements for restricting Azure Web PubSub public access.",
+      hours: 2,
+      minutes: 0
+    }
+  ],
+
+  "25-08-2026": [
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Explored the Agent Garage ingress setup and its integration with Azure Application Gateway.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Reviewed Application Gateway backend pools, backend settings, routing rules, listeners and hostname configuration in detail.",
+      hours: 3,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Updated the Application Gateway configuration with the correct hostname based on the identified requirement.",
+      hours: 1,
+      minutes: 30
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Verified the updated Application Gateway configuration and routing setup for disabling public access to Azure Web PubSub.",
+      hours: 1,
+      minutes: 30
+    }
+  ],
+
+  "26-08-2026": [
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Continued the POC for disabling public access to Azure Web PubSub.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Reviewed the required Application Gateway configuration changes to support restricted Azure Web PubSub access.",
+      hours: 2,
+      minutes: 30
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Analyzed the existing Azure Web PubSub and Application Gateway traffic flow to understand the required routing changes.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Internal Discussion",
+      taskValue: "287",
+      description: "Connected with Narendra to obtain the Azure Web PubSub subdomain and understand the required mapping with the Application Gateway public IP.",
+      hours: 1,
+      minutes: 30
+    }
+  ],
+
+  "27-08-2026": [
+    {
+      task: "Internal Discussion",
+      taskValue: "287",
+      description: "Connected with Mayur to discuss the implementation approach and plan for restricting Azure Web PubSub public access.",
+      hours: 1,
+      minutes: 30
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Updated the Agent Garage Application Gateway configuration, including backend pools, backend settings, routing rules and listeners.",
+      hours: 3,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Troubleshot connectivity and configuration issues encountered during the Azure Web PubSub access restriction POC.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Configured and validated the required Application Gateway rules for disabling public access to Azure Web PubSub.",
+      hours: 1,
+      minutes: 30
+    }
+  ]
+};
 
 function preventSubmission() {
   const allButtons = document.querySelectorAll('button');
