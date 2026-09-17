@@ -42,7 +42,7 @@ docker tag <source-image>:<tag> <target-image>:<tag>
 
 # Examples
 docker tag myapp:1.0 myapp:latest                        # local alias
-docker tag myapp:1.0 myregistry.io/team/myapp:1.0       # for private registry
+docker tag myapp:1.0 myregistry.io/team/myapp:1.0        # for private registry
 docker tag myapp:1.0 username/myapp:1.0                  # for Docker Hub
 ```
 
@@ -52,7 +52,7 @@ docker tag myapp:1.0 username/myapp:1.0                  # for Docker Hub
 
 ```bash
 # Login to registry
-docker login                                          # Docker Hub
+docker login                                         # Docker Hub
 docker login myregistry.io                           # private registry
 
 # Push

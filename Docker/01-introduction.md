@@ -23,10 +23,10 @@ docker info
 │          (docker build / run / ps …)        │
 └─────────────────┬───────────────────────────┘
                   │ REST API
-┌─────────────────▼───────────────────────────┐
-│             Docker Daemon  (dockerd)        │
+┌─────────────────▼─────────────────────────────────┐
+│             Docker Daemon  (dockerd)              │
 │  Manages Images │ Containers │ Networks │ Volumes │
-└──────┬──────────┴───────────────────────────┘
+└──────┬──────────┴─────────────────────────────────┘
        │ gRPC
 ┌──────▼─────────────────┐
 │      containerd        │  ← High-level runtime
