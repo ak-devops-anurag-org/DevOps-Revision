@@ -113,9 +113,9 @@ docker stats
 ## Container Lifecycle
 
 ```
-create ──► start ──► running ──► stop ──► remove
-              ▲          │
-              └──restart─┘
+image ──► create ──► start ──► running ──► stop ──► remove
+                       ▲          │
+                       └──restart─┘
 ```
 
 | Stage | Command | Description |

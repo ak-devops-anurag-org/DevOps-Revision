@@ -131,7 +131,7 @@ docker port <container>
 FROM node:18 AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci
+RUN npm ci --omit=dev
 COPY . .
 RUN npm run build
 
@@ -185,7 +185,7 @@ dist
 FROM node:18-alpine AS build
 WORKDIR /app
 COPY package*.json ./
-RUN npm ci --only=production
+RUN npm ci --omit=production
 COPY . .
 RUN npm run build
 
@@ -202,4 +202,56 @@ CMD ["node", "dist/index.js"]
 ```bash
 docker build -t mynode-app:1.0 .
 docker run -d -p 3000:3000 --name nodeapp mynode-app:1.0
+```
+
+
+### How to server React frontend - using node or Nginx
+
+For a standard React SPA (Create React App, Vite, etc. — anything that just builds to static HTML/JS/CSS), Nginx is the better practice, not a Node.js server. A few reasons this is the industry default:
+
+- You don't need a JS runtime to serve static files. Node.js/Express serving static assets is doing unnecessary work — spinning up an event loop, V8, npm dependencies — for a job that's just "read a file, send bytes." Nginx does this in C, with far lower memory footprint and higher throughput.
+- Smaller, more secure image. An Nginx-alpine final image has no Node runtime, no npm packages, no node_modules — smaller attack surface, fewer CVEs to scan for in the CWPP gate you set up earlier.
+- Mature reverse-proxy features for free — gzip/brotli compression, caching headers, TLS termination, rate limiting, SPA fallback routing — all config, no code.
+- Node.js server only earns its place when you actually need a server — Next.js/Remix SSR, server components, an API you're bundling in, or WebSocket handling alongside the frontend. If you're doing pure client-side rendering, a Node server is extra runtime for zero benefit.
+
+
+```dockerfile
+# ---------- Build stage ----------
+FROM node:20-alpine AS build
+WORKDIR /app
+
+# Install deps first so this layer is cached unless package files change
+COPY package.json package-lock.json ./
+RUN npm ci --omit=production
+
+COPY . .
+RUN npm run build
+# CRA outputs to /app/build, Vite outputs to /app/dist — adjust the COPY
+# path below to match your build tool.
+
+# ---------- Production stage ----------
+FROM nginx:1.27-alpine AS production
+
+# Strip the default nginx welcome page
+RUN rm -rf /usr/share/nginx/html/*
+
+# Bring in only the compiled static assets, not source or node_modules
+COPY --from=build /app/build /usr/share/nginx/html
+
+# Custom server block: SPA routing, gzip, caching, security headers
+COPY nginx.conf /etc/nginx/conf.d/default.conf
+
+# Run as a non-root user
+RUN chown -R nginx:nginx /usr/share/nginx/html /var/cache/nginx /var/log/nginx && \
+    touch /var/run/nginx.pid && \
+    chown nginx:nginx /var/run/nginx.pid
+USER nginx
+
+# Non-privileged port since we're not running as root
+EXPOSE 8080
+
+HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/ || exit 1
+
+CMD ["nginx", "-g", "daemon off;"]
 ```

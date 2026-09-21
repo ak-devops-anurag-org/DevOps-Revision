@@ -12,17 +12,17 @@ docker create  →  CREATED
                      │
                      ▼
                   RUNNING  ←──── docker restart
-                  │     │
-         docker pause  docker stop / kill
-                  │     │
-               PAUSED  STOPPED
-                  │     │
-          docker unpause  │
-                  └──► RUNNING
-                           │
-                      docker rm
-                           │
-                        DELETED
+                  /      \
+         docker pause   docker stop / kill
+               /            \
+            PAUSED         STOPPED
+               │              │
+          docker unpause      │
+                  └──────► RUNNING
+                              │
+                           docker rm
+                              │
+                           DELETED
 ```
 
 ---
@@ -70,11 +70,11 @@ docker ps --format "table {{.ID}}\t{{.Names}}\t{{.Status}}"  # custom format
 
 ---
 
-## Start, Stop & Restart
+## Start, Stop, Pause & Restart
 
 ```bash
-docker start <container>               # start stopped container
-docker stop <container>                # graceful stop (SIGTERM → SIGKILL)
+docker start <container>              # start stopped container
+docker stop <container>               # graceful stop (SIGTERM → SIGKILL)
 docker stop -t 5 <container>          # custom timeout (seconds) before SIGKILL
 docker kill <container>               # immediate kill (SIGKILL)
 docker restart <container>            # stop + start
@@ -82,6 +82,12 @@ docker restart -t 10 <container>      # with timeout
 
 # Multiple at once
 docker stop container1 container2 container3
+
+## Stop v/s Pause
+docker stop <container>               
+# Gracefully terminates the processes & completely releases both CPU and RAM.
+docker pause <container>              
+# Freezes the container processes to 0% CPU but keeps its exact state loaded in the host RAM.
 ```
 
 ---
