@@ -89,6 +89,7 @@ project root and loads both the skill and MCP server:
 **Step 1 — Create `.agents/mcp_config.json`** at your project root:
 
 ```json
+
 {
   "mcpServers": {
     "terraform": {
@@ -97,6 +98,8 @@ project root and loads both the skill and MCP server:
         "run",
         "-i",
         "--rm",
+        "--name", 
+        "tf-mcp-server",
         "hashicorp/terraform-mcp-server:latest"
       ]
     }
