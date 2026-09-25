@@ -1,8 +1,23 @@
+// 23 sep 2026 - sick leave 
+// 24 sep 2026 - connected with Ummed sir for new Delhi project requirement and created Resume in CT format and shared with him
+// Started with Federated Identity credentials and workload identity for App on Azure ASK connectivity CosmodDB
+
+
+// 14-18 Sep 2026 - week 4 - prepared for the HDFC Client interview
+
+// 21 sep 2026 - connected with Vishwas and Suraj regarding the scheduled interview process
+
+
+// 14 and 15 sep - 
+// revised Linux, Git GitHub, branching strategies, GitOps and best practices
+// revised CICD and DevSecOps best practices - including SAST, SCA, sonarQube, Checkmarx and Prisma images scan etc 
 // 16 sep 2026 - wednesday - 
-// understood the prod ready connectivity b/n app on aks and dynamodb using workload identity and UAMI
 // created a simple py fast api backend to store data in cosmos db 
 // deployed cosmos db - key based auth and tested the app and DB connectivity 
-// 
+// Explored and understood the prod ready connectivity b/n app on aks and dynamodb using workload identity and UAMI
+// How the DB connectivty established for GCP cloud SQL and GKE for the HDFC env
+// 17 and 18 sep 2026 - 
+// explored terraform and started revising docker and K8S with best practices and security practices for the HDFC interview preparation
 
 // =================================
 // =================================
@@ -184,8 +199,66 @@ const timesheetData_week1 = {
   ]
 };
 
+
+// 7 and 8 sept 2026 - monday and tuesday - LnD
+const timesheetData_week2_b = {
+    "07-09-2026": [
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Explored the Google Microservices Demo repository and reviewed its architecture consisting of around 11 microservices.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Reviewed the technology stacks used across the microservices, including Go, Node.js, Java, C# and Python.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Studied Dockerfile best practices for building efficient, maintainable and optimized container images.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Analyzed the Dockerfiles of individual microservices and understood their containerization requirements and configurations.",
+      hours: 2,
+      minutes: 0
+    }
+  ],
+  "08-09-2026": [
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Containerized the microservices from the Google Microservices Demo repository using Docker and built and ran individual service containers.",
+      hours: 3,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Validated application connectivity between the containerized microservices and troubleshot containerization and runtime issues.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Deployed the complete microservices application on a local Kind Kubernetes cluster and validated the deployment.",
+      hours: 3,
+      minutes: 0
+    }
+  ]
+};
+
 // 09 to 11 sept 2026 - wednesday to friday - New HDFC req
-const timesheetData_week2 = {
+const timesheetData_week2_a = {
   "09-09-2026": [
     {
       task: "Internal Discussion",
@@ -281,64 +354,163 @@ const timesheetData_week2 = {
 };
 
 
-// 7 and 8 sept 2026 - monday and tuesday - LnD
+// 14 to 18 sept 2026 - monday to friday - HDFC interview preparation
 const timesheetData = {
-    "07-09-2026": [
+  "14-09-2026": [
     {
       task: "Other",
       taskValue: "288",
-      description: "Explored the Google Microservices Demo repository and reviewed its architecture consisting of around 11 microservices.",
+      description: "Revised Linux fundamentals and commonly used system administration concepts relevant to Cloud and DevOps environments.",
+      hours: 2,
+      minutes: 30
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Reviewed Git and GitHub workflows, branching strategies, and repository management best practices.",
       hours: 2,
       minutes: 0
     },
     {
       task: "Other",
       taskValue: "288",
-      description: "Reviewed the technology stacks used across the microservices, including Go, Node.js, Java, C# and Python.",
+      description: "Revised GitOps concepts and best practices for managing application deployments through Git-based workflows.",
       hours: 2,
       minutes: 0
     },
     {
       task: "Other",
       taskValue: "288",
-      description: "Studied Dockerfile best practices for building efficient, maintainable and optimized container images.",
+      description: "Reviewed infrastructure and DevOps concepts for the HDFC engagement interview preparation.",
+      hours: 1,
+      minutes: 30
+    }
+  ],
+
+  "15-09-2026": [
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Revised CI/CD pipeline concepts and DevSecOps best practices for secure application delivery.",
+      hours: 2,
+      minutes: 30
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Reviewed SAST, SCA, SonarQube, Checkmarx, and Prisma Cloud image scanning practices.",
+      hours: 2,
+      minutes: 30
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Revised security integration across the CI/CD lifecycle and application deployment workflow.",
       hours: 2,
       minutes: 0
     },
     {
       task: "Other",
       taskValue: "288",
-      description: "Analyzed the Dockerfiles of individual microservices and understood their containerization requirements and configurations.",
-      hours: 2,
+      description: "Reviewed DevSecOps implementation practices relevant to the HDFC engagement.",
+      hours: 1,
       minutes: 0
     }
   ],
-  "08-09-2026": [
+
+  "16-09-2026": [
     {
       task: "Other",
       taskValue: "288",
-      description: "Containerized the microservices from the Google Microservices Demo repository using Docker and built and ran individual service containers.",
-      hours: 3,
-      minutes: 0
+      description: "Created a Python FastAPI backend to store and retrieve application data from Azure Cosmos DB.",
+      hours: 2,
+      minutes: 30
     },
     {
       task: "Other",
       taskValue: "288",
-      description: "Validated application connectivity between the containerized microservices and troubleshot containerization and runtime issues.",
+      description: "Deployed and configured Cosmos DB with key-based authentication and validated application-to-database connectivity.",
       hours: 2,
       minutes: 0
     },
     {
       task: "Other",
       taskValue: "288",
-      description: "Deployed the complete microservices application on a local Kind Kubernetes cluster and validated the deployment.",
-      hours: 3,
+      description: "Explored production-ready connectivity between an application running on AKS and a database using Workload Identity and UAMI.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Revised the connectivity approach between GKE workloads and Cloud SQL used in the HDFC environment.",
+      hours: 1,
+      minutes: 30
+    }
+  ],
+
+  "17-09-2026": [
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Revised Terraform fundamentals, infrastructure provisioning concepts, and infrastructure-as-code best practices.",
+      hours: 2,
+      minutes: 30
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Reviewed Docker concepts, containerization fundamentals, and production-oriented containerization practices.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Revised Kubernetes fundamentals, workload management concepts, and core orchestration practices.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Reviewed Kubernetes security considerations relevant to production deployments in the HDFC environment.",
+      hours: 1,
+      minutes: 30
+    }
+  ],
+
+  "18-09-2026": [
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Revised Docker fundamentals, containerization concepts, and Docker best practices.",
+      hours: 2,
+      minutes: 30
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Reviewed Kubernetes architecture, core components, and workload management concepts.",
+      hours: 2,
+      minutes: 30
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Revised Kubernetes security practices and production deployment considerations.",
+      hours: 2,
+      minutes: 0
+    },
+    {
+      task: "Other",
+      taskValue: "288",
+      description: "Reviewed container orchestration and security practices relevant to HDFC interview preparation.",
+      hours: 1,
       minutes: 0
     }
   ]
 };
-
-
 
 function preventSubmission() {
   const allButtons = document.querySelectorAll('button');

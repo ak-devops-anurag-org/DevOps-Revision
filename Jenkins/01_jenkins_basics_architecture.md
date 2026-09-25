@@ -126,23 +126,28 @@
 ```bash
 # Method 1: Package manager (Ubuntu/Debian)
 sudo apt update
-sudo apt install fontconfig openjdk-17-jre
-curl -fsSL https://pkg.jenkins.io/debian-stable/jenkins.io-2023.key | sudo tee \
-  /usr/share/keyrings/jenkins-keyring.asc > /dev/null
-echo deb [signed-by=/usr/share/keyrings/jenkins-keyring.asc] \
+sudo apt install fontconfig openjdk-21-jre
+java -version
+
+sudo wget -O /etc/apt/keyrings/jenkins-keyring.asc \
+  https://pkg.jenkins.io/debian-stable/jenkins.io-2026.key
+echo "deb [signed-by=/etc/apt/keyrings/jenkins-keyring.asc]" \
   https://pkg.jenkins.io/debian-stable binary/ | sudo tee \
   /etc/apt/sources.list.d/jenkins.list > /dev/null
-sudo apt update && sudo apt install jenkins
+sudo apt update
+sudo apt install jenkins
 
 # Method 2: Docker (recommended for quick setup)
 docker run -d \
   --name jenkins \
   -p 8080:8080 -p 50000:50000 \
   -v jenkins_home:/var/jenkins_home \
-  jenkins/jenkins:lts-jdk17
+  jenkins/jenkins:lts-jdk21
 
 # Method 3: WAR file
 java -jar jenkins.war --httpPort=8080
+
+# Official docs - https://www.jenkins.io/doc/book/installing
 ```
 
 ### Initial Setup

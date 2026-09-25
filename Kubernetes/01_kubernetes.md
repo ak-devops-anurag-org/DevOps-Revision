@@ -96,7 +96,6 @@ selector:
 Services use selectors to discover Pods. If labels on Pods do not match the Service selector, traffic will not reach the Pods — this is a very common troubleshooting scenario.
 
 ---
-
 ### Q5. Declarative vs Imperative approach ⭐ MUST KNOW
 
 **Answer:**
@@ -202,11 +201,7 @@ kubectl get cronjobs
 - Jobs have `backoffLimit` (retry count) and `activeDeadlineSeconds` (timeout).
 - CronJobs have `concurrencyPolicy` — `Allow`, `Forbid`, or `Replace`.
 
----
-
 # Section 3 — kubectl Commands
-
----
 
 ### Q10. What are the most important kubectl commands for production support? ⭐ MUST KNOW
 

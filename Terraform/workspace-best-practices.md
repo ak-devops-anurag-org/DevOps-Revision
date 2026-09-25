@@ -8,7 +8,6 @@
 - [Best Practices for Workspaces](#best-practices-for-workspaces)
 - [Common Workspace Commands](#common-workspace-commands)
 
-
 ## What are Terraform Workspaces?
 
 Terraform workspaces allow you to manage multiple instances of a given set of infrastructure resources within a single configuration. Each workspace maintains its own state file, enabling you to deploy the same code to different environments (e.g., dev, staging, prod) without duplicating configuration files.

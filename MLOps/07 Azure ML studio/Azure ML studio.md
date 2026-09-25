@@ -9,7 +9,7 @@ Creation, deployment and scale of ML model
 Versioning,
 
 Features
-- open a build it support for open sourec toll and framework for model traning - framework PyTorch, TensorFlow
+- open a build it support for open source tool and framework for model traning - framework PyTorch, TensorFlow
 - Development tools - Jupter notebook, pycharm
 - Automated ML - Build the model, Hyberparameter tuning, etc
 - Entitiy managment - Versioning, Profiling

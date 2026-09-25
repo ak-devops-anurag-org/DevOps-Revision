@@ -19,24 +19,19 @@ project-root/
 │   │   ├── backend.tf
 │   │   ├── variables.tf
 │   │   ├── locals.tf
-│   │   ├── resources/
 │   │   └── outputs.tf
+│   ├── uat/
+│   │    └── (same structure as dev)
 │   └── prod/
-│       └── (same structure as dev)
+│        └── (same structure as dev)
 ├── modules/
-│   ├── network/
-│   │   ├── main.tf
-│   │   ├── variables.tf
-│   │   └── outputs.tf
-│   └── compute/
-│       └── (module files)
-├── global-resources/
-│   └── ...
-├── provider.tf
-├── backend.tf
-├── variables.tf
-├── locals.tf
-└── outputs.tf
+    ├── network/
+    │   ├── main.tf
+    │   ├── variables.tf
+    │   └── outputs.tf
+    └── compute/
+        └── (module files)
+
 ```
 
 ## File Separation Strategy
