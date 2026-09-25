@@ -119,6 +119,20 @@ az group delete -n myRG             # Delete RG and all contents
 ### 🟠 What is an Azure Landing Zone?
 **Short answer:** An architectural blueprint for setting up a scalable, secure, and well-governed Azure environment. It pre-configures networking, identity, security, and governance (Management Groups, Policies) before deploying application workloads.
 
+### Azure Control v/s Data Plane Permission 
+
+#### Control Plane Permissions
+- Purpose: Used to **create, update, delete**, and configure Azure resources (e.g., creating a storage account or setting up firewall rules).
+- Governed by: Azure Resource Manager (ARM) via management.azure.com.
+- Typical Roles: Subscription Owner, Contributor.
+- Example: An administrator with the Owner role can delete a storage account or change its network settings, but cannot automatically view the files stored inside it.
+
+#### Data Plane Permissions
+- Purpose: Used to **interact with the actual data or data stream inside the resource** (e.g., reading/writing blobs, querying a database, or using a cryptographic key).
+- Governed by: The individual resource provider or service-specific mechanisms (like Azure RBAC data actions or access keys).
+- Typical Roles: Storage Blob Data Reader, Key Vault Secrets User.
+- Example: An application reading files from a container uses Storage Blob Data Reader permissions without needing any management rights over the storage account itself.
+
 ## Scenarios
 
 ### 🎯 SCENARIO: Your company needs to deploy a batch processing job that runs for 4 hours every night. It can be interrupted and resumed without data loss. Which compute pricing model should you choose?

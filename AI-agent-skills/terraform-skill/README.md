@@ -1,8 +1,8 @@
 # Terraform AI Agent Skills + MCP Server — Setup Guide
 
-> How to give your AI coding agent **Terraform IaC superpowers**: a custom skill
+> How to give your AI coding agent **Terraform IaC superpowers**: a **custom skill**
 > (contextual guidelines) + a live connection to the HashiCorp Terraform Registry
-> via the MCP server.
+> via the **MCP server**.
 
 ---
 
